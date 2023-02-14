@@ -1,0 +1,21 @@
+Cloud_Pct
+Feels_Like
+Humidity
+Max_Temp
+Min_Temp
+Sunrise 
+Sunset 
+Temp
+Wind_Degrees 
+Wind_Speed
+
+.innerHTML = data.cloud_pct
+.innerHTML = data.feels_like
+.innerHTML = data.humidity
+.innerHTML = data.max_temp
+.innerHTML = data.min_temp
+.innerHTML = data.sunrise 
+.innerHTML = data.sunset 
+.innerHTML = data.temp
+.innerHTML = data.wind_degrees 
+.innerHTML = data.wind_speed 
