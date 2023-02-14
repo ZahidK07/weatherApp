@@ -1,68 +1,15 @@
-body{
-   background: rgb(255, 251, 251);
-   color: rgb(14, 14, 14);
+*{
+  margin: 0;
+  padding: 0 ;
+  box-sizing: border-box;
 }
 
-.myDark{
-    background: rgb(8, 8, 8);
-    color: rgb(0, 0, 0);
+form{
+  display: flex;
+  justify-content: center;
+
 }
 
-#header{
-    font-weight: bold;
-    font-size: 50px;
-    text-decoration: underline;
-    width: 35%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 12px;
+#celcius, #percent-icon{
+  font-size: 22px;
 }
-
-#modeBtn{
-    position: absolute;
-    margin-left: 75rem;
-    margin-top: 20px;
-}
-
-.card{
-    width: 200px;
-    border-radius: 5%;
-    background: #7b7c7e;
-    color: #fff;
-    margin-left:3%;
-  }
-  .card:hover { transform: scale(1.1); }
-  .card-img-top{
-    width:44%
-  }
-
-  #cityName{
-      color:#7b7c7e;
-  }
-  
-  .headingh1{
-    text-align: center;
-    color: rgb(255, 255, 255);
-    text-shadow: 2px 2px #28346c;
-  }
-  
-  .max{
-    color: rgb(166, 226, 236);
-    font-weight: bold;
-  }
-  .min{
-    color:rgb(104, 155, 241);
-    font-weight: bold;
-  }
-  .day{
-    color: rgb(166 226 236);
-  }
-  .humid{
-    color:rgb(44, 112, 105);
-  }
-  .topTemp{
-    font-size:26px;
-    color:white;
-    font-weight: bold;
-  }

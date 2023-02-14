@@ -1,30 +1,35 @@
-function getWeather(){
-    let city = $('.cities')[0].value;
-    //document.getElementsByClassName('cities')[0].value
-    const weatherurl = `http://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&mode=json&units=metric&cnt=5&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`
-    $.ajax({
-        url:weatherurl,
-        type:'GET',
-        datatype:'json',
-        success:function(data){
-            console.log(data)
-            $('#cityName')[0].innerText= data.city.name;
-            $('#weather').empty();
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'e908b8841bmsh9aa852798777ca3p108c14jsnd9a560ebe8fa',
+		'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
+	}
+};
 
-            for(i=0;i<data.list.length;i++){
-                $('#weather').append(
-                    "<div class='card col-md-2'><div class='row'>"+
-                    "<img class='card-img-top' src='https://openweathermap.org/img/w/"+data.list[i].weather[0].icon+".png' alt='weather'/>"+
-                    "<span class='topTemp'>"+data.list[i].temp.day+"°C</span></div><div class='card-body'>"+
-                    "<span class='max'>"+data.list[i].temp.max+"</span>/<span class='min'>"+data.list[i].temp.min+"°C</span><h4 class='card-title'>"+data.list[i].weather[0].main+"</h4><p class='card-text'>"+
-                    "<p class='day'>"+Date(data.list[i].dt)+"</p><p>Humidity:"+data.list[i].humidity+"</p></p></div></div>"
-                )
-            }
-        }
+let getweather = (city)=>{ 
+    cityName.innerHTML = city;
+    fetch(`https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=${city}`, options)
+	.then(response => response.json())
+	.then((data)=>{
+        console.log(data)
+
+        Cloud_Pct.innerHTML = data.cloud_pct
+        Feels_Like.innerHTML = data.feels_like
+        Humidity.innerHTML = data.humidity
+        Max_Temp.innerHTML = data.max_temp
+        Min_Temp.innerHTML = data.min_temp
+        // Sunrise.innerHTML = data.sunrise  
+        // Sunset.innerHTML = data.sunset 
+        Temp.innerHTML = data.temp
+        Wind_Degrees.innerHTML = data.wind_degrees  
+        Wind_Speed.innerHTML = data.wind_speed
     })
+    .catch(err => console.error(err));
 }
 
-function changeMode(){
-    var newBody = document.body;
-    newBody.classList.toggle('myDark')
-}
+
+Submit.addEventListener('click',(a)=>{
+    a.preventDefault()
+    getweather(city.value)
+})
+getweather('City')
