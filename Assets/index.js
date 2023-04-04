@@ -33,3 +33,4 @@ Submit.addEventListener('click',(a)=>{
     getweather(city.value)
 })
 getweather('City')
+

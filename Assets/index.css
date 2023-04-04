@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0 ;
+    box-sizing: border-box;
+    font-family: Impact;
+}
+
+body{
+    background: rgb(167, 64, 223) !important;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+
+}
+
+#celcius, #percent-icon{
+    font-size: 22px;
+}
+
+.weatherImg{
+    background-image: url(./weather.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+.windImg{
+    background-image: url(./windsock.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.humidityImg{
+    background-image: url(./humidity.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
